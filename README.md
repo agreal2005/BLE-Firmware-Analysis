@@ -10,7 +10,7 @@ Ensure the following:
 5. To view intermediate results, run with: ```./run.sh --debug```
 6. Final results are stored in the ./results directory, with a csv that holds the mapping of address to the matched function names, and a json that contains commented information for BLE focused functions matched, on the basis of NIST recommendations.
 
-For your reference, there are example binaries located in /example_firmware_binexported/ with the binaries in the bin folder and the corresponding BinExports in the binexport folder.
+For reference, there are example binaries located in /example_firmware_binexported/ with the binaries in the bin folder and the corresponding BinExports in the binexport folder. You can use these in case the BinExport-ing part is a bit cumbersome. However, do ensure that BinDiff is properly installed in your system.
 
 ## Regarding BinExport and BinDiff
 It is preferred to use [Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.4_build/ghidra_10.4_PUBLIC_20230928.zip) 10.4, and [BinExport](https://github.com/google/binexport/releases/download/v12-20230515-ghidra_10.3/ghidra_BinExport.zip) for 10.3+ Ghidra versions, as these are known to be compatible with each other. 
