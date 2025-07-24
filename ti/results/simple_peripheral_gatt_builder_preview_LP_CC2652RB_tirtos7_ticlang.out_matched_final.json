@@ -1,17 +1,5 @@
 [
   {
-    "return_type": "void", 
-    "address": "0001C380", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "abort", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
     "return_type": "int", 
     "address": "00014FB4", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -19,25 +7,6 @@
     "security_level": "LOW", 
     "callsites": [], 
     "name": "main", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001C120", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8_t", 
-        "name": "taskId", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "ble_dispatch_liteInit", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -172,18 +141,6 @@
     ]
   }, 
   {
-    "return_type": "void", 
-    "address": "0001A3AC", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
-    "params": [], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "Board_init", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
     "return_type": "static bStatus_t", 
     "address": "0000F500", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.7: BLE GATT operation. Enforce attribute permissions, validate handle ranges, sanitize input data. Implement proper access controls and prevent information disclosure.", 
@@ -284,208 +241,6 @@
     ]
   }, 
   {
-    "return_type": "void", 
-    "address": "00010514", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8_t", 
-        "name": "task_id", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8_t", 
-        "name": "cfg_gapBond_maxBonds", 
-        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8_t", 
-        "name": "cfg_gapBond_maxCharCfg", 
-        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8_t", 
-        "name": "cfg_gapBond_gatt_no_client", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8_t", 
-        "name": "cfg_gapBond_gatt_no_service_changed", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "HIGH", 
-    "callsites": [], 
-    "name": "GAPBondMgr_Init", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "00018DB0", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.7: BLE GATT operation. Enforce attribute permissions, validate handle ranges, sanitize input data. Implement proper access controls and prevent information disclosure.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "connHandle", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "gattCharCfg_t *", 
-        "name": "charCfgTbl", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "GATTServApp_InitCharCfg", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "bStatus_t", 
-    "address": "0001025C", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.7: BLE GATT operation. Enforce attribute permissions, validate handle ranges, sanitize input data. Implement proper access controls and prevent information disclosure.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "gattCharCfg_t *", 
-        "name": "charCfgTbl", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "uint8 *", 
-        "name": "pValue", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8", 
-        "name": "authenticated", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "gattAttribute_t *", 
-        "name": "attrTbl", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "uint16", 
-        "name": "numAttrs", 
-        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8", 
-        "name": "taskId", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "pfnGATTReadAttrCB_t", 
-        "name": "pfnReadAttrCB", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "GATTServApp_ProcessCharCfg", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "bStatus_t", 
-    "address": "00016882", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.7: BLE GATT operation. Enforce attribute permissions, validate handle ranges, sanitize input data. Implement proper access controls and prevent information disclosure.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "connHandle", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "gattAttribute_t *", 
-        "name": "pAttr", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "uint8 *", 
-        "name": "pValue", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "len", 
-        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "offset", 
-        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "validCfg", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "GATTServApp_ProcessCCCWriteReq", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "uint16", 
-    "address": "0001C12C", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.7: BLE GATT operation. Enforce attribute permissions, validate handle ranges, sanitize input data. Implement proper access controls and prevent information disclosure.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "connHandle", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "gattCharCfg_t *", 
-        "name": "charCfgTbl", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "GATTServApp_ReadCharCfg", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
     "return_type": "extern Clock_Handle", 
     "address": "00015FA0", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -566,57 +321,26 @@
     ]
   }, 
   {
-    "return_type": "void", 
-    "address": "0001B1A4", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
+    "return_type": "extern void", 
+    "address": "00019068", 
+    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
     "params": [
       {
         "security_risk": "LOW", 
-        "type": "assertCback_t", 
-        "name": "initAssertCback", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
+        "type": "Clock_Struct *", 
+        "name": "pClock", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
       }, 
       {
         "security_risk": "LOW", 
-        "type": "uint8", 
-        "name": "initLegacyMode", 
+        "type": "uint32_t", 
+        "name": "clockTimeout", 
         "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
       }
     ], 
     "security_level": "LOW", 
     "callsites": [], 
-    "name": "halAssertInit", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001C51A", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "halAssertHandler", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "000165B8", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8", 
-        "name": "taskID", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "HCI_Init", 
+    "name": "Util_restartClock", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -1258,12 +982,94 @@
   }, 
   {
     "return_type": "ICall_Errno", 
+    "address": "0001C500", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.7: BLE GATT operation. Enforce attribute permissions, validate handle ranges, sanitize input data. Implement proper access controls and prevent information disclosure.", 
+    "params": [
+      {
+        "security_risk": "MEDIUM", 
+        "type": "ICall_EntityID", 
+        "name": "entityId", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
+      }, 
+      {
+        "security_risk": "MEDIUM", 
+        "type": "ICall_ServiceEnum *", 
+        "name": "servId", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [
+      {
+        "address": "00005644", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(register, 0x20, 4)", 
+          "r1"
+        ]
+      }, 
+      {
+        "address": "0000a806", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(register, 0x20, 4)", 
+          "r1"
+        ]
+      }, 
+      {
+        "address": "0000a850", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(register, 0x20, 4)", 
+          "r1"
+        ]
+      }
+    ], 
+    "name": "ICall_entityId2ServiceId", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "ICall_Errno", 
     "address": "0001B798", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
     "params": [], 
     "security_level": "LOW", 
     "callsites": [], 
     "name": "ICall_abort", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "ICall_Errno", 
+    "address": "0001C228", 
+    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "int", 
+        "name": "intnum", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "LOW", 
+    "callsites": [], 
+    "name": "ICall_enableInt", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -1680,18 +1486,6 @@
     ]
   }, 
   {
-    "return_type": "extern bool", 
-    "address": "00019FB4", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "PowerCC26XX_isStableXOSC_HF", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
     "return_type": "static void", 
     "address": "00019A04", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -1838,146 +1632,13 @@
     ]
   }, 
   {
-    "return_type": "return", 
-    "address": "0001B784", 
+    "return_type": "void", 
+    "address": "0001BE68", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "SRDY_PIN", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "GPIO_read", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001B5B8", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8", 
-        "name": "taskid", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "ICall_EntityID", 
-        "name": "dispatchid", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "osal_enroll_senderid", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "uint8", 
-    "address": "000166F8", 
-    "nist_comment": "NIST SP 800-53 SI-10: CRITICAL - Deprecated unsafe function. Replace with bounds-checked alternatives (strncpy, snprintf, etc.). High risk of buffer overflow, code injection, and memory corruption.", 
-    "params": [], 
-    "security_level": "CRITICAL", 
-    "callsites": [], 
-    "name": "osal_init_system", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "CWE-119"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001B98C", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "uint_least32_t", 
-        "name": "tickPeriod", 
-        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint_least32_t", 
-        "name": "osalMaxMsecs", 
-        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "osal_timer_init", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "00017DC8", 
-    "nist_comment": "NIST SP 800-53 SI-10: CRITICAL - Deprecated unsafe function. Replace with bounds-checked alternatives (strncpy, snprintf, etc.). High risk of buffer overflow, code injection, and memory corruption.", 
-    "params": [], 
-    "security_level": "CRITICAL", 
-    "callsites": [], 
-    "name": "osal_start_system", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "CWE-119"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001C138", 
-    "nist_comment": "NIST SP 800-53 SI-10: Buffer operation. Validate buffer bounds, prevent overflow/underflow, sanitize input data, implement length checks.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "osal_icallMsg_hook_t", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "osal_set_icall_hook", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001ACB4", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint8", 
-        "name": "taskId", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "osal_CbTimerInit", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "uint8", 
-    "address": "0001A1BC", 
-    "nist_comment": "NIST SP 800-121r2: Initialization function. Validate all configuration parameters, disable unused features, apply principle of least privilege, implement secure defaults.", 
     "params": [], 
     "security_level": "LOW", 
     "callsites": [], 
-    "name": "osal_snv_init", 
+    "name": "OAD_close", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -2035,38 +1696,6 @@
     "name": "ROM_Init", 
     "compliance_tags": [
       "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "extern void", 
-    "address": "0000ECB4", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "RF_Handle", 
-        "name": "rfHandle", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "RF_CmdHandle", 
-        "name": "cmdHandle", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "RF_EventMask", 
-        "name": "events", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "rfCallback_ADV_NCONN_and_ADV_CONN", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
     ]
   }, 
   {
@@ -2158,19 +1787,6 @@
     ]
   }, 
   {
-    "return_type": "extern void", 
-    "address": "00004A24", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "llScheduler_no_INIT_CFG_no_SCAN_CFG", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
     "return_type": "void", 
     "address": "0001C4C4", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -2178,6 +1794,18 @@
     "security_level": "LOW", 
     "callsites": [], 
     "name": "llScheduler_hook", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001B19C", 
+    "nist_comment": "NIST SP 800-53 SI-10: Buffer operation. Validate buffer bounds, prevent overflow/underflow, sanitize input data, implement length checks.", 
+    "params": [], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llSetRfReportAodPackets", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -2374,25 +2002,6 @@
     "security_level": "LOW", 
     "callsites": [], 
     "name": "MAP_HCI_CteRequestFailedEvent", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "extern uint32_t", 
-    "address": "0001AC14", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "uint8", 
-        "name": "preempted", 
-        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "LL_AbortedCback_peripheral", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -2602,28 +2211,222 @@
     ]
   }, 
   {
-    "return_type": "return", 
-    "address": "000171C8", 
-    "nist_comment": "NIST SP 800-53 SI-10: Buffer operation. Validate buffer bounds, prevent overflow/underflow, sanitize input data, implement length checks.", 
+    "return_type": "uint8", 
+    "address": "0001CBF0", 
+    "nist_comment": "NIST SP 800-53 SI-10: CRITICAL - Deprecated unsafe function. Replace with bounds-checked alternatives (strncpy, snprintf, etc.). High risk of buffer overflow, code injection, and memory corruption.", 
     "params": [
       {
-        "security_risk": "LOW", 
-        "type": "connId", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "setOnOffValue", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
+        "security_risk": "MEDIUM", 
+        "type": "uint16", 
+        "name": "connId", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
       }
     ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "llSetStarvationMode", 
+    "security_level": "CRITICAL", 
+    "callsites": [
+      {
+        "address": "000017fe", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "00011f6c", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x97480, 1)"
+        ]
+      }, 
+      {
+        "address": "000054ca", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "0000eed6", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "0000a8da", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "00003076", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "00007118", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "000136ee", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "0000892c", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x97480, 1)"
+        ]
+      }, 
+      {
+        "address": "0000d37e", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(register, 0x20, 4)"
+        ]
+      }, 
+      {
+        "address": "00016184", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "000161d8", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "000151d6", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "000151f6", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "00014cf2", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "000097c2", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x97480, 1)"
+        ]
+      }, 
+      {
+        "address": "00006c70", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }, 
+      {
+        "address": "00003a44", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "(unique, 0x95f00, 1)"
+        ]
+      }
+    ], 
+    "name": "MAP_llGetStarvationMode", 
     "compliance_tags": [
-      "NIST-SP-800-53"
+      "NIST-SP-800-53", 
+      "CWE-119"
     ]
   }, 
   {
@@ -2762,6 +2565,26 @@
   }, 
   {
     "return_type": "void", 
+    "address": "0001B2FE", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "set", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llSetPeriodicAdvChmapUpdate", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "void", 
     "address": "00015DFA", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
     "params": [], 
@@ -2855,6 +2678,26 @@
   }, 
   {
     "return_type": "void", 
+    "address": "0001B59A", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "void *", 
+        "name": "pPeriodicAdv", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llEndPeriodicAdvTask", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "void", 
     "address": "000172E6", 
     "nist_comment": "NIST SP 800-53 SI-10: Buffer operation. Validate buffer bounds, prevent overflow/underflow, sanitize input data, implement length checks.", 
     "params": [
@@ -2876,6 +2719,26 @@
     "name": "MAP_llSetPeriodicSyncInfo", 
     "compliance_tags": [
       "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001BCA2", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "HIGH", 
+        "type": "void *", 
+        "name": "pAdvSet", 
+        "comment": "Buffer pointer. MUST validate non-NULL, check bounds against length parameter, sanitize input data, prevent buffer overflow/underflow attacks."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llPeriodicAdv_Config", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
     ]
   }, 
   {
@@ -3024,6 +2887,117 @@
   }, 
   {
     "return_type": "uint8", 
+    "address": "0000173C", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint8 *", 
+        "name": "listSize", 
+        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_LE_ReadPeriodicAdvListSize", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "uint8", 
+    "address": "0001A7FC", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint16", 
+        "name": "syncHandle", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "enable", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_LE_SetPeriodicAdvReceiveEnable", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "uint8", 
+    "address": "0001ACEC", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint16", 
+        "name": "syncHandle", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "samplingEnable", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "slotDurations", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }, 
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint8", 
+        "name": "maxSampledCtes", 
+        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
+      }, 
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint8", 
+        "name": "length", 
+        "comment": "Size/length parameter. MUST validate against buffer bounds, check for integer overflow, ensure non-negative values, implement maximum size limits to prevent DoS attacks."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint8 *", 
+        "name": "pAntenna", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [
+      {
+        "address": "00011b9c", 
+        "methods_tried": [
+          "symbolic_trace"
+        ], 
+        "confidence": "medium", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": [
+          "2", 
+          "r1", 
+          "r2", 
+          "r3"
+        ]
+      }
+    ], 
+    "name": "MAP_LE_SetConnectionlessIqSamplingEnable", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "uint8", 
     "address": "0001C432", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
     "params": [], 
@@ -3064,6 +3038,90 @@
     ]
   }, 
   {
+    "return_type": "uint8", 
+    "address": "0001ADC0", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llProcessScanRxFIFO_hook", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001BCCE", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "uint8 *", 
+        "name": "pPkt", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "void *", 
+        "name": "advEvent", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint32", 
+        "name": "timeStamp", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "phy", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llProcessPeriodicScanSyncInfo", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001BD2C", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "void *", 
+        "name": "pPeriodicScan", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llEndPeriodicScanTask", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001BEBA", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llPeriodicScan_PostProcess", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
     "return_type": "void", 
     "address": "000162E6", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
@@ -3084,6 +3142,47 @@
     "security_level": "MEDIUM", 
     "callsites": [], 
     "name": "MAP_llTerminatePeriodicScan", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "uint8", 
+    "address": "0001C164", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [], 
+    "security_level": "MEDIUM", 
+    "callsites": [
+      {
+        "address": "00007b40", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }, 
+      {
+        "address": "000168e2", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }, 
+      {
+        "address": "0001a186", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }
+    ], 
+    "name": "MAP_llGetPeriodicScanCteTasks", 
     "compliance_tags": [
       "NIST-SP-800-53", 
       "NIST-SP-800-121r2"
@@ -3274,6 +3373,19 @@
     ]
   }, 
   {
+    "return_type": "void", 
+    "address": "0001C1EA", 
+    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
+    "params": [], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llUpdateExtScanAcceptSyncInfo", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
     "return_type": "uint8_t", 
     "address": "0001C3C6", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
@@ -3350,26 +3462,6 @@
     ]
   }, 
   {
-    "return_type": "return", 
-    "address": "00016144", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "pMsg", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "LE_SetExtAdvData", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
     "return_type": "uint8_t", 
     "address": "0001C3CE", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
@@ -3424,26 +3516,6 @@
     ]
   }, 
   {
-    "return_type": "return", 
-    "address": "00016198", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "pMsg", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "LE_SetExtScanRspData", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
     "return_type": "uint8_t", 
     "address": "0001C3CA", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
@@ -3458,26 +3530,6 @@
     "security_level": "MEDIUM", 
     "callsites": [], 
     "name": "LE_SetExtAdvEnable_hook", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "return", 
-    "address": "0000546C", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "pMsg", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "LE_SetExtAdvEnable", 
     "compliance_tags": [
       "NIST-SP-800-53", 
       "NIST-SP-800-121r2"
@@ -3527,31 +3579,6 @@
     ]
   }, 
   {
-    "return_type": "extern uint32", 
-    "address": "0000C02C", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "startConnId", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }, 
-      {
-        "security_risk": "MEDIUM", 
-        "type": "uint16", 
-        "name": "bestSelectedConnIdAfterStart", 
-        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "llCalcConnMaxTimeLength", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
     "return_type": "uint8", 
     "address": "0001C4BC", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -3559,18 +3586,6 @@
     "security_level": "LOW", 
     "callsites": [], 
     "name": "llGetNextConn_hook", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "return", 
-    "address": "0000A5E4", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "llGetNextConn", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -3626,71 +3641,6 @@
     ]
   }, 
   {
-    "return_type": "return", 
-    "address": "00009A90", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "secTask", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "primTask", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "llFindStartType", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "extern void", 
-    "address": "0000512C", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "HIGH", 
-        "type": "advSet_t *", 
-        "name": "pAdvSet", 
-        "comment": "Buffer pointer. MUST validate non-NULL, check bounds against length parameter, sanitize input data, prevent buffer overflow/underflow attacks."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "llUpdateExtAdvTx", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "extern void", 
-    "address": "0000A738", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "HIGH", 
-        "type": "advSet_t *", 
-        "name": "pAdvSet", 
-        "comment": "Buffer pointer. MUST validate non-NULL, check bounds against length parameter, sanitize input data, prevent buffer overflow/underflow attacks."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "llPrepareNextExtAdv", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
     "return_type": "uint8", 
     "address": "0001C4C8", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
@@ -3711,26 +3661,6 @@
     ]
   }, 
   {
-    "return_type": "return", 
-    "address": "00002B0C", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.2: BLE GAP operation. Use LE Secure Connections, implement privacy features, validate address types. Enforce connection parameter limits and prevent tracking attacks.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "pAdvSet", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "MEDIUM", 
-    "callsites": [], 
-    "name": "llSetupExtAdv", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
     "return_type": "uint8", 
     "address": "0001C4C0", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -3745,25 +3675,6 @@
     "security_level": "LOW", 
     "callsites": [], 
     "name": "llNextChanIndex_hook", 
-    "compliance_tags": [
-      "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "return", 
-    "address": "000161EC", 
-    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "eventCounter", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "LOW", 
-    "callsites": [], 
-    "name": "llNextChanIndex", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -3998,6 +3909,33 @@
   }, 
   {
     "return_type": "uint8", 
+    "address": "00018BA0", 
+    "nist_comment": "NIST SP 800-121r2 \u00a74.3: Random number generation. MUST use hardware TRNG or NIST SP 800-90A approved DRBG. NEVER use predictable PRNGs for cryptographic material. Ensure sufficient entropy and proper seeding.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "void *", 
+        "name": "pParsedMsg", 
+        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
+      }, 
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint16_t", 
+        "name": "connHandle", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
+      }
+    ], 
+    "security_level": "HIGH", 
+    "callsites": [], 
+    "name": "smpInitiatorProcessPairingRandom_hook", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2", 
+      "NIST-SP-800-90A"
+    ]
+  }, 
+  {
+    "return_type": "uint8", 
     "address": "0001C4E4", 
     "nist_comment": "NIST SP 800-121r2 \u00a75.8: BLE Security Manager operation. Use LE Secure Connections with ECDH, avoid 'Just Works' pairing. Implement OOB authentication where possible, secure key storage required.", 
     "params": [
@@ -4011,26 +3949,6 @@
     "security_level": "HIGH", 
     "callsites": [], 
     "name": "smpResponderProcessPairingPublicKey_hook", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "return", 
-    "address": "000156BC", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.8: BLE Security Manager operation. Use LE Secure Connections with ECDH, avoid 'Just Works' pairing. Implement OOB authentication where possible, secure key storage required.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "pParsedMsg", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "HIGH", 
-    "callsites": [], 
-    "name": "smpResponderProcessPairingPublicKey", 
     "compliance_tags": [
       "NIST-SP-800-53", 
       "NIST-SP-800-121r2"
@@ -4077,526 +3995,6 @@
       }
     ], 
     "name": "smResponderProcessLTKReq_hook", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "return", 
-    "address": "0000CE70", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.8: BLE Security Manager operation. Use LE Secure Connections with ECDH, avoid 'Just Works' pairing. Implement OOB authentication where possible, secure key storage required.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "connectionHandle", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "pRandom", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "encDiv", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "HIGH", 
-    "callsites": [], 
-    "name": "smResponderProcessLTKReq", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "NIST-SP-800-121r2"
-    ]
-  }, 
-  {
-    "return_type": "return", 
-    "address": "00018D78", 
-    "nist_comment": "NIST SP 800-121r2 \u00a75.8: BLE Security Manager operation. Use LE Secure Connections with ECDH, avoid 'Just Works' pairing. Implement OOB authentication where possible, secure key storage required.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "pLinkItem", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "cmdID", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }, 
-      {
-        "security_risk": "LOW", 
-        "type": "pParsedMsg", 
-        "name": "param", 
-        "comment": "Parameter requires validation. Check range/format, sanitize input, implement proper error handling per NIST security guidelines."
-      }
-    ], 
-    "security_level": "HIGH", 
-    "callsites": [
-      {
-        "address": "00004ab4", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004ac6", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004cac", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004cbe", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004d8c", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004d9e", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "0000469c", 
-        "methods_tried": [
-          "register_names"
-        ], 
-        "confidence": "low", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "r0", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000046f2", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "16", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "0000470c", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004742", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "0000475a", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "4", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004778", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000047bc", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "4", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000047d4", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000047ee", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004804", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004822", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "16", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "0000485c", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004876", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "0000488c", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000048a4", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "16", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000048be", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000048d4", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004900", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "4", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004918", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004938", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "16", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004952", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004968", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004996", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "2", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000049ae", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "4", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000049c6", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "8", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "000049e0", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00004a16", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "1", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "00010fea", 
-        "methods_tried": [
-          "register_names"
-        ], 
-        "confidence": "low", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "r0", 
-          "r1", 
-          "r2"
-        ]
-      }, 
-      {
-        "address": "0000468e", 
-        "methods_tried": [
-          "symbolic_trace"
-        ], 
-        "confidence": "medium", 
-        "extraction_method": "multi_layer_analysis", 
-        "param-vals": [
-          "(register, 0x20, 4)", 
-          "r1", 
-          "r2"
-        ]
-      }
-    ], 
-    "name": "smpResponderProcessIncoming_sPatch", 
     "compliance_tags": [
       "NIST-SP-800-53", 
       "NIST-SP-800-121r2"
@@ -4907,6 +4305,55 @@
     ]
   }, 
   {
+    "return_type": "int8", 
+    "address": "0001C462", 
+    "nist_comment": "NIST SP 800-53 IA-2: Authentication function. Implement multi-factor authentication, prevent replay attacks, validate credentials securely, implement account lockout policies.", 
+    "params": [], 
+    "security_level": "HIGH", 
+    "callsites": [
+      {
+        "address": "00004b18", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }, 
+      {
+        "address": "00004bc8", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }, 
+      {
+        "address": "00004c62", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }, 
+      {
+        "address": "00004cec", 
+        "methods_tried": [
+          "register_names"
+        ], 
+        "confidence": "low", 
+        "extraction_method": "multi_layer_analysis", 
+        "param-vals": []
+      }
+    ], 
+    "name": "MAP_llHealthCheck", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
     "return_type": "void", 
     "address": "00014DCE", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
@@ -4921,6 +4368,62 @@
     "security_level": "LOW", 
     "callsites": [], 
     "name": "MAP_llHealthUpdate", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001C29A", 
+    "nist_comment": "NIST SP 800-53 SI-10: Buffer operation. Validate buffer bounds, prevent overflow/underflow, sanitize input data, implement length checks.", 
+    "params": [
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint32", 
+        "name": "connTime", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint32", 
+        "name": "scanTime", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint32", 
+        "name": "initTime", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint32", 
+        "name": "advTime", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_llHealthSetThreshold", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "uint8_t", 
+    "address": "0001C4AC", 
+    "nist_comment": "NIST SP 800-53 IA-2: Authentication function. Implement multi-factor authentication, prevent replay attacks, validate credentials securely, implement account lockout policies.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "uint16_t", 
+        "name": "opcode", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "HIGH", 
+    "callsites": [], 
+    "name": "MAP_checkLegacyHCICmdStatus", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -4970,6 +4473,25 @@
       }
     ], 
     "name": "MAP_checkVsEventsStatus", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "uint8", 
+    "address": "0001C4B4", 
+    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "ignoreBit", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "LOW", 
+    "callsites": [], 
+    "name": "MAP_llFlushIgnoredRxEntry", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -5037,12 +4559,62 @@
   }, 
   {
     "return_type": "void", 
+    "address": "0001C51C", 
+    "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "uint32", 
+        "name": "dwT", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }, 
+      {
+        "security_risk": "MEDIUM", 
+        "type": "uint8", 
+        "name": "task", 
+        "comment": "Security identifier/handle. MUST validate as active/authorized, implement session management, prevent handle reuse attacks, enforce access control policies."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "index", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "LOW", 
+    "callsites": [], 
+    "name": "MAP_LL_SDAA_AddDwtRecord", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "void", 
     "address": "0000EA5A", 
     "nist_comment": "NIST SP 800-53: Security control implementation required. Validate inputs, implement error handling, apply least privilege principle, ensure secure coding practices per NIST guidelines.", 
     "params": [], 
     "security_level": "LOW", 
     "callsites": [], 
     "name": "MAP_LL_SDAA_SampleRXWindow", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "0001C51E", 
+    "nist_comment": "NIST SP 800-53 SI-10: Buffer operation. Validate buffer bounds, prevent overflow/underflow, sanitize input data, implement length checks.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "uint8", 
+        "name": "channel", 
+        "comment": "Integer parameter. Validate range limits, check for overflow/underflow, ensure consistent sign handling, implement bounds checking."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "MAP_LL_SDAA_SetChannelInSample", 
     "compliance_tags": [
       "NIST-SP-800-53"
     ]
@@ -5102,54 +4674,6 @@
     "name": "MAP_llHandleSDAAControlTX", 
     "compliance_tags": [
       "NIST-SP-800-53"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "00015CA0", 
-    "nist_comment": "NIST SP 800-121r2 \u00a74.2: ECC cryptographic function. MUST use NIST P-256 curve minimum. Validate point operations, secure random number generation, and side-channel protection.", 
-    "params": [
-      {
-        "security_risk": "LOW", 
-        "type": "hciEvt_BLEReadP256PublicKeyComplete_t *", 
-        "name": "pK", 
-        "comment": "Pointer parameter. MUST validate non-NULL, check memory access bounds, prevent use-after-free and double-free vulnerabilities."
-      }, 
-      {
-        "security_risk": "CRITICAL", 
-        "type": "uint8 *", 
-        "name": "privateKey", 
-        "comment": "Cryptographic key material. MUST be \u2265128 bits, randomly generated, securely stored, and cleared after use. Implement key rotation policies."
-      }
-    ], 
-    "security_level": "HIGH", 
-    "callsites": [], 
-    "name": "SM_p256KeyCB", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "FIPS-140-2", 
-      "NIST-SP-800-57"
-    ]
-  }, 
-  {
-    "return_type": "void", 
-    "address": "0001851C", 
-    "nist_comment": "NIST SP 800-121r2: Cryptographic operation. Ensure FIPS 140-2 compliance, secure key management, and proper algorithm usage.", 
-    "params": [
-      {
-        "security_risk": "CRITICAL", 
-        "type": "hciEvt_BLEGenDHKeyComplete_t *", 
-        "name": "pDhKey", 
-        "comment": "Cryptographic key material. MUST be \u2265128 bits, randomly generated, securely stored, and cleared after use. Implement key rotation policies."
-      }
-    ], 
-    "security_level": "HIGH", 
-    "callsites": [], 
-    "name": "SM_dhKeyCB", 
-    "compliance_tags": [
-      "NIST-SP-800-53", 
-      "FIPS-140-2", 
-      "NIST-SP-800-57"
     ]
   }, 
   {

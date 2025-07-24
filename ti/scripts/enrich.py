@@ -38,12 +38,12 @@ def nist_function_comment(fn):
     # Cryptographic operations
     if CRYPTO_OPERATIONS.search(name):
         if "aes" in name:
-            return ("NIST SP 800-121r2 >4.1: AES cryptographic function. "
-                    "MUST use FIPS 140-2 approved implementation with ≥128-bit keys. "
+            return ("NIST SP 800-121r2 4.1: AES cryptographic function. "
+                    "MUST use FIPS 140-2 approved implementation with >= 128-bit keys. "
                     "Validate key derivation, IV/nonce uniqueness, and secure key storage. "
                     "For BLE: Use AES-CCM for encryption/authentication.")
         elif "ecc" in name or "p256" in name:
-            return ("NIST SP 800-121r2 >4.2: ECC cryptographic function. "
+            return ("NIST SP 800-121r2 4.2: ECC cryptographic function. "
                     "MUST use NIST P-256 curve minimum. Validate point operations, "
                     "secure random number generation, and side-channel protection.")
         elif "hash" in name or "sha" in name:
@@ -55,7 +55,7 @@ def nist_function_comment(fn):
     
     # Random number generation
     if RNG_FUNCTIONS.search(name):
-        return ("NIST SP 800-121r2 >4.3: Random number generation. "
+        return ("NIST SP 800-121r2 4.3: Random number generation. "
                 "MUST use hardware TRNG or NIST SP 800-90A approved DRBG. "
                 "NEVER use predictable PRNGs for cryptographic material. "
                 "Ensure sufficient entropy and proper seeding.")
@@ -68,19 +68,19 @@ def nist_function_comment(fn):
     
     # BLE GATT operations
     if BLE_GATT.search(name):
-        return ("NIST SP 800-121r2 >5.7: BLE GATT operation. "
+        return ("NIST SP 800-121r2 5.7: BLE GATT operation. "
                 "Enforce attribute permissions, validate handle ranges, sanitize input data. "
                 "Implement proper access controls and prevent information disclosure.")
     
     # BLE GAP operations
     if BLE_GAP.search(name):
-        return ("NIST SP 800-121r2 >5.2: BLE GAP operation. "
+        return ("NIST SP 800-121r2 5.2: BLE GAP operation. "
                 "Use LE Secure Connections, implement privacy features, validate address types. "
                 "Enforce connection parameter limits and prevent tracking attacks.")
     
     # BLE SMP/Security operations
     if BLE_SMP.search(name):
-        return ("NIST SP 800-121r2 >5.8: BLE Security Manager operation. "
+        return ("NIST SP 800-121r2 5.8: BLE Security Manager operation. "
                 "Use LE Secure Connections with ECDH, avoid 'Just Works' pairing. "
                 "Implement OOB authentication where possible, secure key storage required.")
     
@@ -115,7 +115,7 @@ def nist_param_comment(param):
     # Cryptographic keys and sensitive data
     if CRYPTO_KEYS.search(name):
         if "key" in name:
-            return ("Cryptographic key material. MUST be ≥128 bits, randomly generated, "
+            return ("Cryptographic key material. MUST be >=128 bits, randomly generated, "
                     "securely stored, and cleared after use. Implement key rotation policies.")
         elif "ltk" in name or "irk" in name:
             return ("BLE long-term key material. MUST be 128-bit, derived from ECDH, "

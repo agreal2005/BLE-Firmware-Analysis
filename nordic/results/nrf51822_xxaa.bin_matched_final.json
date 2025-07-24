@@ -1,0 +1,79 @@
+[
+  {
+    "return_type": "uint32_t", 
+    "address": "00005574", 
+    "nist_comment": "NIST SP 800-121r2: Initialization. Apply secure defaults and least-privilege configuration.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "ble_nus_t *", 
+        "name": "p_nus", 
+        "comment": "Pointer parameter. Verify non-NULL, ensure bounds, and protect from UAF."
+      }, 
+      {
+        "security_risk": "LOW", 
+        "type": "ble_nus_init_t const *", 
+        "name": "p_nus_init", 
+        "comment": "Pointer parameter. Verify non-NULL, ensure bounds, and protect from UAF."
+      }
+    ], 
+    "security_level": "LOW", 
+    "callsites": [], 
+    "name": "ble_nus_init", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "00000220", 
+    "nist_comment": "NIST SP 800-53 SI-10: Buffer handling. Perform strict bounds checking and input validation.", 
+    "params": [], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "gscm_local_database_has_changed", 
+    "compliance_tags": [
+      "NIST-SP-800-53"
+    ]
+  }, 
+  {
+    "return_type": "return", 
+    "address": "000053CA", 
+    "nist_comment": "NIST SP 800-121r2 5.2: GAP operation. Require LE Secure Connections and privacy-enabled addresses.", 
+    "params": [
+      {
+        "security_risk": "LOW", 
+        "type": "p_addr", 
+        "name": "param", 
+        "comment": "Parameter requires validation and error handling per NIST guidelines."
+      }
+    ], 
+    "security_level": "MEDIUM", 
+    "callsites": [], 
+    "name": "sd_ble_gap_addr_get", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }, 
+  {
+    "return_type": "void", 
+    "address": "00001F90", 
+    "nist_comment": "NIST SP 800-121r2 5.8: SMP routine. Use authenticated LE Secure Connections (ECDH) and protect key material.", 
+    "params": [
+      {
+        "security_risk": "MEDIUM", 
+        "type": "nrf_ble_lesc_peer_oob_data_handler", 
+        "name": "handler", 
+        "comment": "Identifier/handle. Confirm validity and enforce session access control."
+      }
+    ], 
+    "security_level": "HIGH", 
+    "callsites": [], 
+    "name": "nrf_ble_lesc_peer_oob_data_handler_set", 
+    "compliance_tags": [
+      "NIST-SP-800-53", 
+      "NIST-SP-800-121r2"
+    ]
+  }
+]

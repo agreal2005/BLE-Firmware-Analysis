@@ -1,0 +1,12 @@
+address,name
+00000220,gscm_local_database_has_changed
+00001F90,nrf_ble_lesc_peer_oob_data_handler_set
+000027C0,sd_ble_gatts_service_changed
+000027C8,sd_ble_gatts_sys_attr_set
+000053C2,sd_ble_gatts_sys_attr_get
+000053C6,sd_ble_gap_ppcp_get
+000053CA,sd_ble_gap_addr_get
+000053CE,sd_ble_gap_appearance_get
+00005574,ble_nus_init
+00005D2C,sd_ble_gap_device_name_get
+00005D30,sd_ble_uuid_encode
