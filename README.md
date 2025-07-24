@@ -1,14 +1,14 @@
 # BLE-Firmware-Analysis
 Tool that analyzes stripped Bluetooth Low Energy Firmware (from vendors: TI &amp; Nordic). Functions are identified and are commented based on NIST recommendations.
 
-## For TI Firmware (go to /ti directory)
-Ensure the following:
-1. Place the firmware binary/binaries in the src folder. For each binary, also place its corresponding BinExport file in the same directory. [See more on generating BinExport file below]
-2. In the terminal session you're running, ensure that `GHIDRA_DIR` contains the path to your ghidra installation. If not, then either export `GHIDRA_DIR` with this path, or for permanent changes, modify the `GHIDRA_DIR` variable in the `run.sh` script.
-3. Ensure you have `python3` installed in your system. Also ensure that you have `bindiff` installed. [See more about BinDiff below]
-4. Ensure that run.sh has executing privilege.
-5. To view intermediate results, run with: ```./run.sh --debug```
-6. Final results are stored in the ./results directory, with a csv that holds the mapping of address to the matched function names, and a json that contains commented information for BLE focused functions matched, on the basis of NIST recommendations.
+## Steps for Usage
+1. Go to the respective directory (ti/nordic)
+2. Place the firmware binary/binaries in the src folder. For each binary, also place its corresponding BinExport file in the same directory. [See more on generating BinExport file below]
+3. In the terminal session you're running, ensure that `GHIDRA_DIR` contains the path to your ghidra installation. If not, then either export `GHIDRA_DIR` with this path, or for permanent changes, modify the `GHIDRA_DIR` variable in the `run.sh` script.
+4. Ensure you have `python3` installed in your system. Also ensure that you have `bindiff` installed. [See more about BinDiff below]
+5. Ensure that run.sh has executing privilege.
+6. To view intermediate results, run with: ```./run.sh --debug```
+7. Final results are stored in the ./results directory, with a csv that holds the mapping of address to the matched function names, and a json that contains commented information for BLE focused functions matched, on the basis of NIST recommendations.
 
 For reference, there are example binaries located in /example_firmware_binexported/ with the binaries in the bin folder and the corresponding BinExports in the binexport folder. You can use these in case the BinExport-ing part is a bit cumbersome. However, do ensure that BinDiff is properly installed in your system.
 
